@@ -19,7 +19,9 @@ const loadImages = () => {
       $("<img>").attr({
         src: img,
         width: imgSpec.width,
-        height: imgSpec.height
+        height: imgSpec.height,
+      }).css({
+        position: "relative"
       })
     );
   });
@@ -27,6 +29,25 @@ const loadImages = () => {
 
 const scroll = () => {
   log("scroll");
-  
+  $("img").each((i, img) => {
+    const $img = $(img),
+          oldTop = $img.css('top'),
+          newTop = oldTop ? 
+            parseInt(oldTop) + 10 :
+            10;
+    log("setting new top to", newTop, "for img", $img);
+    /*img.animate([
+      {transform: 'translate(0, 100px)'}
+    ], 2000);*/
+    $img.css(
+      {transform: 'translate(0, -' + imgSpec.height + 'px)'}
+    );
 
+    //$img.css("top", newTop);
+  });
 };
+
+$(document).ready(() => {
+  log("document ready");
+  loadImages();
+});

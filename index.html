@@ -15,6 +15,8 @@ body {
 		outline: 0;
 		background: transparent;
 		border-bottom: 2px solid black;
+		background: #ff8b8b;
+		z-index: 0;
 }
 
 #wall {
@@ -23,6 +25,8 @@ body {
 
 #wall img {
 	margin: 0;
+	transition: 1s ease-in-out;
+	z-index: -1;
 }
 
 #nasty {
@@ -49,7 +53,7 @@ body {
     <div id="makes-me">Trump makes me feel <input id="feel" /></div>
   </div>
 	<div>
-		<input type="button" onclick="scroll();" />
+		<input type="button" onclick="scroll();" value="Scroll Test" />
 	</div>
 	<div id="wall">
 	</div>
