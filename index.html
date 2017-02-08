@@ -6,8 +6,19 @@
 
 <style>
 
+:root {
+  --bg-color: #ff8b8b;
+}
+
 body {
-	background: #ff8b8b;
+	background: var(--bg-color);
+  margin: 0;
+  z-index: 0;
+}
+
+#header {
+	background: var(--bg-color);
+  position: relative;
 }
 
 #feel {
@@ -20,13 +31,15 @@ body {
 }
 
 #wall {
-	margin-top: 10px;
+	margin-top: 0px;
+  position: relative;
 }
 
 #wall img {
 	margin: 0;
-	transition: 1s ease-in-out;
 	z-index: -1;
+  float: left;
+  position: relative;
 }
 
 #nasty {
@@ -44,6 +57,7 @@ body {
 	text-align: center;
 }
 
+
 </style>
 
 <body>
@@ -51,10 +65,10 @@ body {
     <div id="nasty">#NastyWoman</div>
     <div id="pledge">pledge</div>
     <div id="makes-me">Trump makes me feel <input id="feel" /></div>
+    <div id="test-controls">
+      <input type="button" onclick="scroll();" value="Scroll Test" />
+    </div>
   </div>
-	<div>
-		<input type="button" onclick="scroll();" value="Scroll Test" />
-	</div>
 	<div id="wall">
 	</div>
 
